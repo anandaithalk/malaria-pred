@@ -1,0 +1,42 @@
+{% extends "base.html" %} {% block content %}
+
+<style>
+    body {
+        background-image: url("static/back.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        
+      }
+</style>
+
+<h3><b><strong>Please upload a picture.</strong></b></h3>
+<h9><i><strong>(This model predicts Malaria parasite)</strong></i></h9>
+<br>
+<br>
+<div>
+    <form id="upload-file" method="post" enctype="multipart/form-data">
+        <label for="imageUpload" class="upload-label">
+           Click here to upload an image... 
+        </label>
+        <input type="file" name="file" id="imageUpload" accept=".png, .jpg, .jpeg">
+    </form>
+
+    <div class="image-section" style="display:none;">
+        <div class="img-preview">
+            <div id="imagePreview">
+            </div>
+        </div>
+        <div>
+            <button type="button" class="btn btn-primary btn-lg " id="btn-predict">(Predict)</button>
+        </div>
+        </div>
+
+    <div class="loader" style="display:none;"></div>
+
+    <font face = 'Brush Script MT', cursive size="4px", >
+    <strong> <h1 font id="result"> </strong>
+        <span> </span>
+    </h1>
+    </font>
+</div>
+{% endblock %}
